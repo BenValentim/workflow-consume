@@ -1,14 +1,45 @@
-name: 'Repository Dispatch'
-description: 'Create a repository dispatch event'
+name: Repository Dispatch
+description: Create a repository dispatch event
+
+on:
+  repository_dispatch:
+    types: [dispatch]
 
 inputs:
   client-payload:
-    description: 'The payload to send with the event'
+    description: The payload to send with the event
     required: true
-    default: '{}'
+    default: "{}"
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump the client payload context
+        env:
+          CLIENT_CONTEXT: ${{ toJson(github.event.client-payload) }}
+        run: echo $CLIENT_CONTEXT
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build project
+        run: yarn build
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Run the action
+        uses: ./
+        with:
+          client-payload: ${{ inputs.client-payload }}
+
 runs:
-  using: 'node20'
-  main: 'dist/index.js'
+  using: "node20"
+  main: "dist/index.js"
+
 branding:
-  icon: 'target'
-  color: 'gray-dark'
+  icon: target
+  color: gray-dark
