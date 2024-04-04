@@ -18,4 +18,11 @@ jobs:
 
       - name: Build project
         run: yarn build
-        
+
+      - name: Commit build artifacts
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add .
+          git commit -m "Build artifacts"
+          git push
