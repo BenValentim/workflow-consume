@@ -1,0 +1,40 @@
+{
+  "name": "workflow-consume",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Consume vars from dispatcher",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write '**/*.ts'",
+    "format-check": "prettier --check '**/*.ts'",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest --passWithNoTests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuasarwayGit/workflow-consume.git"
+  },
+  "keywords": [
+    "actions",
+    "repository",
+    "workflow",
+    "consume"
+  ],
+  "author": "Xiss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/QuasarwayGit/workflow-consume/issues"
+  },
+  "homepage": "https://github.com/QuasarwayGit/workflow-consume#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.4"
+  }
+}
