@@ -2,22 +2,21 @@ name: Repository Dispatch
 
 on:
   repository_dispatch:
-    types: [my-event]
-
+    types: [dispatch]
 
 jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
       - name: "Dump the client payload context"
-        env: 
+        env:
           CLIENT_CONTEXT: ${{ toJson(github.event.client-payload) }}
         run: echo $CLIENT_CONTEXT"
 
       - name: "Install dependencies"
-        run:  npm install @actions/core
+        run: yarn install
 
       - name: "Setup Node.js environment"
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: "20"

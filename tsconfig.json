@@ -7,24 +7,21 @@
     "lib": [
       "es6"
     ],
-    "declaration": true,
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
+    "allowJs": false,
+    "sourceMap": true,
+    "strict": true,
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "noImplicitAny": true,
     "paths": {
       "@/*": [
         "./src/*"
       ]
     }
   },
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
     "__test__",
     "lib",
