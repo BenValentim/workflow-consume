@@ -1,5 +1,5 @@
-name: Repository Dispatch
-description: Create a repository dispatch event
+name: Consume
+description: Consume dispatched vars
 
 inputs:
   client-payload:
@@ -10,6 +10,7 @@ inputs:
 runs:
   using: "node20"
   main: "dist/index.js"
+  pre: yarn install
 
 branding:
   icon: target
