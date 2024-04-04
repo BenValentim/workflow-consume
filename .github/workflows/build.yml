@@ -19,15 +19,4 @@ jobs:
       - name: Build project
         run: yarn build
 
-      - name: Commit build artifacts
-        env:
-          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
-        run: |
-          yarn install
-          yarn build
-          git config --global user.email "github-actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git add .
-          git commit -m "Build artifacts"
-          git remote add origin_with_token "https://github.com/${{ github.repository }}"
-          git push origin_with_token HEAD:${{ github.ref }}
+
