@@ -3,13 +3,12 @@
   "version": "0.0.1",
   "private": false,
   "description": "Consume vars from dispatcher",
-  "main": "dist/index.js",
+  "main": "index.ts",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write '**/*.ts'",
     "format-check": "prettier --check '**/*.ts'",
-    "lint": "eslint src/**/*.ts",
-    "test": "jest --passWithNoTests"
+    "lint": "eslint src/**/*.ts"
   },
   "repository": {
     "type": "git",
