@@ -1,10 +1,6 @@
 name: Repository Dispatch
 description: Create a repository dispatch event
 
-on:
-  repository_dispatch:
-    types: [dispatch]
-
 inputs:
   client-payload:
     description: The payload to send with the event
